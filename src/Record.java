@@ -6,7 +6,7 @@ public interface Record {
 
     void setMainWord(String mainWord);
 
-    void addParameter();
+    void addParameter(Record record);
 
     List getParameters();
 

@@ -12,7 +12,7 @@ public class MinorAPTInstruction implements Record {
     }
 
     @Override
-    public void addParameter() {
+    public void addParameter(Record record) {
 
     }
 

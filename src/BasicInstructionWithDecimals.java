@@ -4,7 +4,7 @@ import java.util.List;
 public class BasicInstructionWithDecimals implements Record {
 
     String majorWord;
-    List<Double> parameters = new LinkedList<>();
+    List<BasicParameters> parameters = new LinkedList<>();
 
 
     @Override
@@ -18,7 +18,7 @@ public class BasicInstructionWithDecimals implements Record {
     }
 
     @Override
-    public void addParameter() {
+    public void addParameter(Record record) {
 
     }
 

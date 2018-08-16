@@ -16,7 +16,7 @@ public class BasicInstrctionWithString implements Record {
     }
 
     @Override
-    public void addParameter() {
+    public void addParameter(Record record) {
 
     }
 
