@@ -4,7 +4,7 @@ import java.util.List;
 public class BasicInstruction implements Record{
 
     private String mainWord;
-    private List<BasicParameters> parameters = new LinkedList<>();
+    private List<BasicParameters> params = new LinkedList<>();
 
     @Override
     public String getMainWord() {
@@ -22,11 +22,16 @@ public class BasicInstruction implements Record{
     }
 
     public void addParameter(BasicParameters parameters) {
-        this.parameters.add(parameters);
+        this.params.add(parameters);
     }
 
     @Override
-    public List getParameters() {
-        return this.parameters;
+    public List getParams() {
+        return this.params;
+    }
+
+    @Override
+    public String toString() {
+        return "-"+getMainWord()+" \n"+params;
     }
 }

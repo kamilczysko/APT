@@ -1,29 +1,21 @@
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+
+import java.util.*;
 
 public class MajorInstruction implements Record{
 
     private String mainWord = null;
-    private List<String> mainWords = new LinkedList<String>();
-
-    private List<Record> parameters;
-    private Map<String, Record> params;
+    private Map<String, BasicParameters> params = new LinkedHashMap<>();
+    private List<BasicParameters> instructionParameters = new LinkedList<>();
 
     @Override
     public String getMainWord() {
-        return null;
+        return mainWord;
     }
 
     @Override
     public void setMainWord(String mainWord) {
         this.mainWord = mainWord;
-        this.mainWords.add(mainWord);
-    }
 
-    public void addAnotherMainWord(String mainWord){
-        this.mainWords.add(mainWord);
     }
 
     public boolean hasMainWord(){
@@ -32,17 +24,34 @@ public class MajorInstruction implements Record{
 
     @Override
     public void addParameter(Record params) {
-        parameters.add(params);
+
+    }
+
+    public void addParameter(BasicParameters parameters) {
+        String key = Optional.ofNullable(parameters.getWord()).orElse(mainWord);
+        params.put(key, parameters);
+    }
+
+    public void addParameter(String key, BasicParameters parameters) {
+        params.put(key, parameters);
+    }
+
+
+    public void addParameterToList(BasicParameters parameters) {
+        instructionParameters.add(parameters);
     }
 
     @Override
-    public List getParameters() {
-        return null;
+    public List getParams() {
+        return instructionParameters;
     }
 
-//    public static void main(String args[]){
-//        MajorInstruction i = new MajorInstruction();
-//        i.setMainWord("dupa");
-//        System.out.println(i.hasMainWord());
-//    }
+    public BasicParameters getParameter(String key) {
+        return params.get(key);
+    }
+
+    @Override
+    public String toString() {
+        return "-"+getMainWord()+" \n"+instructionParameters;
+    }
 }

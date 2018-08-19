@@ -8,6 +8,6 @@ public interface Record {
 
     void addParameter(Record record);
 
-    List getParameters();
+    List getParams();
 
 }

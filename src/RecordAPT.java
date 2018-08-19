@@ -3,6 +3,8 @@ import java.util.*;
 public class RecordAPT {
 
 
+    private List<BasicParameters> paramList;
+
     public List<String> getStackFromRecord(String apt){
 
         List<String> strings = Arrays.asList(splitRecord(apt));
@@ -21,81 +23,130 @@ public class RecordAPT {
     private Record generateRecord(String apt){
         List<String> stackFromRecord = getStackFromRecord(apt);
         ListIterator<String> stringListIterator = stackFromRecord.listIterator();
-
+        paramList = new LinkedList<>();
         Record aptRecord = null;
 
-        aptRecord = new BasicInstruction();
+        aptRecord = new MajorInstruction();
 
-        if(stringListIterator.hasNext()) {
 
-            String next = stringListIterator.next();
+        makeSimpleRecord(aptRecord, stringListIterator);
 
-            if (isWord(next)){
-                aptRecord.setMainWord(next);
-                substractParameters(stringListIterator, aptRecord);
-            }
-
-        }
         return aptRecord;
     }
 
+    private void makeSimpleRecord(Record apt, ListIterator<String> listIterator){
+        if(listIterator.hasNext()) {
 
-    private void substractParameters(ListIterator<String> recordIterator, Record mainRecord){
-        BasicParameters parameters = null;
-        do{
-            String next = recordIterator.next();
+            String next = listIterator.next();
 
-            if(next.matches("/|\\(|\\)"))
-                if(recordIterator.hasNext()) {
-//                    next = recordIterator.next();
-                    continue;
-                }else {
-                    ((BasicInstruction) mainRecord).addParameter(parameters);
-                    break;
-                }
-
-            System.out.println(next);
-
-            if(next.equals("LINE"))
-                System.out.println("dupa");
-
-            if(isDecimal(next)) {
-                if(paramatersTypeHasChanged(parameters, new BasicDecimalParameters())) {
-                    ((BasicInstruction)mainRecord).addParameter(parameters);
-                    parameters = new BasicDecimalParameters();
-                }if(parameters == null)
-                    parameters = new BasicDecimalParameters();
-            }else if(isWord(next)) {
-                if(paramatersTypeHasChanged(parameters, new BasicStringParameter())) {
-                    ((BasicInstruction) mainRecord).addParameter(parameters);
-                    parameters = new BasicStringParameter();
-                }
-                if(parameters == null)
-                    parameters = new BasicStringParameter();
-            }else if(isInt(next)) {
-                if (paramatersTypeHasChanged(parameters, new BasicIntParameters())) {
-                    ((BasicInstruction) mainRecord).addParameter(parameters);
-                    parameters = new BasicIntParameters();
-                }
-                if(parameters == null)
-                    parameters = new BasicIntParameters();
+            if (isWord(next)){
+                apt.setMainWord(next);
+                substrackParameters(listIterator, apt, null);
             }
 
-            parameters.addParameter(next);
-
-//            if(!recordIterator.hasNext())
-//                ((BasicInstruction) mainRecord).addParameter(parameters);
-
-        }while (recordIterator.hasNext());
-
+        }
     }
+
+    private void substrackParameters(ListIterator<String> paramsIterator, Record apt, BasicParameters basicParameters){
+
+        String majWord = null;
+        BasicParameters parameters = null;
+
+        while(paramsIterator.hasNext()){
+            String next = paramsIterator.next();
+            if(next.equals("BC"))
+                System.out.println("asdd");
+
+            if(next.equals("/") || next.equals(""))
+                continue;
+            else if(next.equals("(")){
+                substrackParameters(paramsIterator,apt, parameters);
+            }else if(next.equals(")")){
+                basicParameters.addBasicParameter(parameters);
+                if(basicParameters != null)
+                return ;
+                else continue;
+            }
+
+            if(isWord(next)) {
+                if (majWord == null) {
+                    majWord = next;
+                    if(basicParameters == null)
+                        ((MajorInstruction)apt).addParameterToList(parameters);
+                    else
+                        basicParameters.addBasicParameter(new BasicStringParameter().setWord(majWord));
+                    parameters = null;
+                }else{
+                    if(basicParameters != null){
+                        if(parameters != null)
+                            basicParameters.addBasicParameter(parameters);
+                        else
+                            basicParameters.addBasicParameter(new BasicStringParameter().setWord(majWord));
+                        parameters = null;
+                    }
+                    majWord = next;
+
+                    continue;
+                }
+            }else if(isDecimal(next)){
+                if(parameters != null){
+                    if(paramatersTypeHasChanged(parameters, new BasicDecimalParameters())){
+                        if(!parameters.hasMajWord() && majWord != null)
+                            parameters.setWord(majWord);
+                        if(basicParameters == null)
+                            ((MajorInstruction)apt).addParameterToList(parameters);
+                        else
+                            basicParameters.addBasicParameter(parameters);
+
+                        majWord = null;
+                        parameters = new BasicDecimalParameters();
+                    }
+                }else {
+                    parameters = new BasicDecimalParameters();
+                    parameters.setWord(majWord);
+                }
+
+                parameters.addParameter(next);
+                System.out.println(parameters);
+
+            }else if(isInt(next)){
+                if(parameters != null){
+                    if(paramatersTypeHasChanged(parameters, new BasicIntParameters())){
+                        if(!parameters.hasMajWord() && majWord != null)
+                            parameters.setWord(majWord);
+                        if(basicParameters == null)
+                            ((MajorInstruction)apt).addParameterToList(parameters);
+                        else
+                            basicParameters.addBasicParameter(parameters);
+                        majWord = null;
+                        parameters = new BasicIntParameters();
+                    }
+                }else {
+                    parameters = new BasicIntParameters();
+                    parameters.setWord(majWord);
+                }
+
+                parameters.addParameter(next);
+
+                System.out.println(parameters);
+            }
+        }
+        if(parameters != null) {
+            if (majWord != null && parameters == null)
+                parameters.addBasicParameter(new BasicStringParameter().setWord(majWord));
+            else {
+                if(majWord != null)
+                    parameters.setWord(majWord);
+                ((MajorInstruction) apt).addParameterToList(parameters);
+            }
+        }
+    }
+
 
     private boolean paramatersTypeHasChanged(Object params, Object instance){
         return params!=null && !(params.getClass().isAssignableFrom(instance.getClass()));
     }
-
-
-
+    
     protected static boolean isDecimal(String word) {
         return word.matches("[-]?[0-9]+[.]+[0-9]+");
     }
@@ -108,22 +159,20 @@ public class RecordAPT {
         return word.matches("[A-Z]*");
     }
 
-    // ********interfejs dla tablicy
-
-
     public static void main(String[] args) {
-        String txt ="TLON,GOFWD/      (CIRCLE/     -5.00000,     65.00000,     50.00000,$\n" +
-                "      15.00000),ON,(LINE/     -5.00000,     65.00000,     50.00000,$\n" +
-                "                              -5.00000,     50.00000,     50.00000)";
+//        String txt ="TLON,GOFWD/      (CIRCLE/     -5.00000,     65.00000,     50.00000,$\n" +
+//                "      15.00000),ON,(LINE/     -5.00000,     65.00000,     50.00000,$\n" +
+//                "                              -5.00000,     50.00000,     50.00000)";
 
-                //"CIRCLE/     -5.00000,     65.00000,     50.00000, BENIZ , 1 , 2, 4.454545,33.4545454";
+                String txt = "CIRCLE/     50.00000, 1 , 1.4, A, 1, (B, 1,2,C, 2,3,(D,2.34)),BC,2";
 
 
         RecordAPT r = new RecordAPT();
         Record record = r.generateRecord(txt);
         System.out.println(record.getMainWord());
-        List parameters = record.getParameters();
-        System.out.println(parameters);
+        List<BasicParameters> params = ((MajorInstruction)record).getParams();
+        for(BasicParameters p : params)
+            System.out.println(p);
 
 
     }
