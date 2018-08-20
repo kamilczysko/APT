@@ -75,10 +75,36 @@ public class RecordAPT {
 
                 String txt = "CIRCLE/     -5.00000,     65.00000,     50.00000, 1 , 1.4, A, 1, (B, 1,2,C, 2,3,(D,2.34)),BC,2,5,6,5.56,4.77";
 //
-        RecordAPT r = new RecordAPT();
-        Value record = r.createRecord(txt);
+//        RecordAPT r = new RecordAPT();
+//        Value record = r.createRecord(txt);
+//
+//        System.out.println(record);
 
-        System.out.println(record);
+        Stack stack = new Stack();
+
+        stack.add(1);
+        stack.add(2);
+        stack.add(3);
+        stack.add(4);
+
+
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+
+
+
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+
+
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+
 
     }
 
