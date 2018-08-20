@@ -1,4 +1,5 @@
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -6,14 +7,16 @@ public class ComplexValue extends Value {
 
     private Stack<Value> parametersStack;
 
-    public void setParametersStack(List<Value> list){
+    public void setParametersStack(){
         parametersStack = new Stack();
-        Collections.reverse(list);
-        parametersStack.addAll(list);
+        List<Value> vals = new LinkedList<>(getParameters());
+
+        Collections.reverse(vals);
+        parametersStack.addAll(vals);
     }
 
     public Value getNextValue(){
-        return parametersStack.pop();
+        return (parametersStack.size() > 0) ? parametersStack.pop(): null;
     }
 
     @Override
@@ -21,17 +24,16 @@ public class ComplexValue extends Value {
         return sizeOfArrayOfParametersList() > 0;
     }
 
+    private String tabs = "";
+
     @Override
     public String toString() {
         String vals = "";
 
         if(hasWord())
-            vals += "----"+getWord()+"\n";
+            vals += "W= "+getWord()+": \n";
         for(Value v : getParameters()){
-
-            if(v instanceof ComplexValue)
-                vals += "\t";
-            vals += v+"\n";
+            vals += tabs+v+"\n";
         }
         return vals;
     }

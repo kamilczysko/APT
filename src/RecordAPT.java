@@ -21,6 +21,8 @@ public class RecordAPT {
                 mainValue.addParameter(processListOfParameters(iterator, new ComplexValue()));
             else if(next.equals(")"))
                 return mainValue;
+            else if(next.isEmpty())
+                mainValue.addParameter(null);
             else
                 if(isWord(next)) {
                     if (mainValue.hasWord()) {
@@ -69,41 +71,16 @@ public class RecordAPT {
     }
 
     public static void main(String[] args) {
-//        String txt ="TLON,GOFWD/      (CIRCLE/     -5.00000,     65.00000,     50.00000,$\n" +
-//                "      15.00000),ON,(LINE/     -5.00000,     65.00000,     50.00000,$\n" +
-//                "                              -5.00000,     50.00000,     50.00000)";
+        String txt ="TLON,GOFWD/      (CIRCLE/     -5.00000,     65.00000,     50.00000,$\n" +
+                "      15.00000),ON,(LINE/     -5.00000,     65.00000,     50.00000,$\n" +
+                "                              -5.00000,(A/ 1,2,3)     ,50.00000,     50.00000)";
 
-                String txt = "CIRCLE/     -5.00000,     65.00000,     50.00000, 1 , 1.4, A, 1, (B, 1,2,C, 2,3,(D,2.34)),BC,2,5,6,5.56,4.77";
+//                String txt = "GOTO/ 1.234,4.2,5.6,7.4";
 //
-//        RecordAPT r = new RecordAPT();
-//        Value record = r.createRecord(txt);
-//
-//        System.out.println(record);
-
-        Stack stack = new Stack();
-
-        stack.add(1);
-        stack.add(2);
-        stack.add(3);
-        stack.add(4);
-
-
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-
-
-
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-
-
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
+        RecordAPT r = new RecordAPT();
+        Value record = r.createRecord(txt);
+        ((ComplexValue)record).setParametersStack();
+        System.out.println(record);
 
 
     }
