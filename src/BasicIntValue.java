@@ -4,8 +4,15 @@ public class BasicIntValue extends Value {
 
     private Integer value = null;
 
-    void setIntValue(int value) {
-        this.value = value;
+    public BasicIntValue(String value) {
+        setIntValue(value);
+    }
+
+    public BasicIntValue() {
+    }
+
+    void setIntValue(String value) {
+        this.value = Integer.parseInt(value);
     }
 
     Integer getIntValue() {
@@ -15,5 +22,10 @@ public class BasicIntValue extends Value {
     @Override
     boolean hasBasicValue() {
         return Optional.ofNullable(value).isPresent();
+    }
+
+    @Override
+    public String toString() {
+        return getIntValue()+" --- ";
     }
 }

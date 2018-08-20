@@ -4,7 +4,14 @@ public class BasicStringValue extends Value {
 
     private String value = null;
 
-    void setDoubleValue(String value) {
+    public BasicStringValue(String value) {
+        setStringValue(value);
+    }
+
+    public BasicStringValue() {
+    }
+
+    void setStringValue(String value) {
         this.value = value;
     }
 
@@ -16,4 +23,9 @@ public class BasicStringValue extends Value {
     boolean hasBasicValue() {
         return Optional.ofNullable(value).isPresent();
     }
+    @Override
+    public String toString() {
+        return getStringValue()+" --- ";
+    }
+
 }

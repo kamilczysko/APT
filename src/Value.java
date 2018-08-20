@@ -11,9 +11,11 @@ public abstract class Value {
         this.complexParameters.add(parameter);
     }
 
-    public List<Value> getComplexParameters(){
+    public List<Value> getParameters(){
         return complexParameters;
     }
+
+    public int sizeOfArrayOfParametersList(){return complexParameters.size();}
 
     public Value getComplexValue(int i){
         return complexParameters.get(i);
@@ -32,5 +34,7 @@ public abstract class Value {
     }
 
     abstract boolean hasBasicValue();
+
+
 
 }
