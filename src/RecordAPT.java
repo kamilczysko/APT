@@ -91,6 +91,8 @@ public class RecordAPT {
                 output.append(tabs + myRecord.getWord() + " : \n");
                 String s = drawRecord((ComplexValue) myRecord, tabs);
                 output.append(s);
+            }else if(myRecord == null) {
+                output.append(tabs+"none---\n");
             }else
                 if(myRecord.hasWord())
                     output.append(myRecord.getWord()+" : \n");
