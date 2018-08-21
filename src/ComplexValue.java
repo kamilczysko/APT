@@ -16,25 +16,11 @@ public class ComplexValue extends Value {
     }
 
     public Value getNextValue(){
-        return (parametersStack.size() > 0) ? parametersStack.pop(): null;
+        return (parametersStack.size() > 0) ? parametersStack.pop() : null;
     }
 
     @Override
     boolean hasBasicValue() {
         return sizeOfArrayOfParametersList() > 0;
-    }
-
-    private String tabs = "";
-
-    @Override
-    public String toString() {
-        String vals = "";
-
-        if(hasWord())
-            vals += "W= "+getWord()+": \n";
-        for(Value v : getParameters()){
-            vals += tabs+v+"\n";
-        }
-        return vals;
     }
 }

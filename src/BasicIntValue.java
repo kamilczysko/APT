@@ -5,27 +5,26 @@ public class BasicIntValue extends Value {
     private Integer value = null;
 
     public BasicIntValue(String value) {
-        setIntValue(value);
+        setValue(value);
     }
 
-    public BasicIntValue() {
-    }
+    public BasicIntValue() {}
 
-    void setIntValue(String value) {
+    public void setValue(String value) {
         this.value = Integer.parseInt(value);
     }
 
-    Integer getIntValue() {
+    public Integer getValue() {
         return value;
     }
 
     @Override
-    boolean hasBasicValue() {
+    public boolean hasBasicValue() {
         return Optional.ofNullable(value).isPresent();
     }
 
     @Override
     public String toString() {
-        return getIntValue()+" --- ";
+        return getValue()+"";
     }
 }

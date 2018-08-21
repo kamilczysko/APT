@@ -70,19 +70,41 @@ public class RecordAPT {
         return word.matches("[A-Z]*");
     }
 
+
+    /*****/
     public static void main(String[] args) {
         String txt ="TLON,GOFWD/      (CIRCLE/     -5.00000,     65.00000,     50.00000,$\n" +
                 "      15.00000),ON,(LINE/     -5.00000,     65.00000,     50.00000,$\n" +
-                "                              -5.00000,(A/ 1,2,3)     ,50.00000,     50.00000)";
+                "                              -5.00000,(A/ 1,2,3)     ,50.00000,     50.00000),1,2,3";
 
 //                String txt = "GOTO/ 1.234,4.2,5.6,7.4";
 //
         RecordAPT r = new RecordAPT();
         Value record = r.createRecord(txt);
         ((ComplexValue)record).setParametersStack();
-        System.out.println(record);
+        String s = drawRecord(((ComplexValue) record), "");
+        System.out.println(record.getWord()+"::\n"+s);
+    }
 
+//    static String tabs = "\t";
 
+    static String drawRecord(ComplexValue record, String tabs){
+        tabs += "\t";
+        StringBuilder output = new StringBuilder();
+        List<Value> parameters = record.getParameters();
+        for(Value myRecord : parameters){
+            if(myRecord instanceof ComplexValue) {
+                output.append(tabs + myRecord.getWord() + " : \n");
+                String s = drawRecord((ComplexValue) myRecord, tabs);
+                output.append(s);
+            }else
+                if(myRecord.hasWord())
+                    output.append(myRecord.getWord()+" : \n");
+                else if(!(myRecord instanceof ComplexValue))
+                    output.append(tabs+"*"+myRecord.toString()+" \n");
+
+        }
+        return output.toString();
     }
 
 }

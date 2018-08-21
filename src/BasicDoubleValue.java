@@ -4,18 +4,15 @@ public class BasicDoubleValue extends Value {
 
     private Double value = null;
 
-    public BasicDoubleValue(String value) {
-        setDoubleValue(value);
-    }
+    public BasicDoubleValue(String value) {setValue(value);}
 
-    public BasicDoubleValue() {
-    }
+    public BasicDoubleValue() {}
 
-    void setDoubleValue(String value) {
+    void setValue(String value) {
         this.value = Double.parseDouble(value);
     }
 
-    Double getDoubleValue() {
+    Double getValue() {
         return value;
     }
 
@@ -26,6 +23,6 @@ public class BasicDoubleValue extends Value {
 
     @Override
     public String toString() {
-        return getDoubleValue()+" --- ";
+        return getValue()+"";
     }
 }

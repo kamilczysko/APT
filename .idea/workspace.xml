@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ddf89b17-15a8-4d7e-a585-1919bcd448ec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecordAPT/RecordAPT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecordAPT/RecordAPT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasicDoubleValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasicDoubleValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasicIntValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasicIntValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasicStringValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasicStringValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ComplexValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComplexValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RecordAPT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecordAPT.java" afterDir="false" />
     </list>
@@ -23,16 +25,8 @@
       <file leaf-file-name="RecordAPT.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RecordAPT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="75" column="33" selection-start-line="73" selection-start-column="31" selection-end-line="75" selection-end-column="33" />
-              <folding>
-                <element signature="e#1437#1438#0" expanded="true" />
-                <element signature="e#1496#1497#0" expanded="true" />
-                <element signature="e#1545#1546#0" expanded="true" />
-                <element signature="e#1594#1595#0" expanded="true" />
-                <element signature="e#1636#1637#0" expanded="true" />
-                <element signature="e#1681#1682#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="387">
+              <caret line="95" column="50" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -40,14 +34,12 @@
       <file leaf-file-name="ComplexValue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ComplexValue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#368#369#0" expanded="true" />
-                <element signature="e#449#450#0" expanded="true" />
-                <element signature="e#84#85#0" expanded="true" />
-                <element signature="e#112#113#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#525#526#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/src/Value.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -65,15 +57,11 @@
       <file leaf-file-name="BasicIntValue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BasicIntValue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+            <state relative-caret-position="255">
+              <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
               <folding>
-                <element signature="e#147#148#0" expanded="true" />
-                <element signature="e#181#182#0" expanded="true" />
-                <element signature="e#142#143#0" expanded="true" />
-                <element signature="e#193#194#0" expanded="true" />
                 <element signature="e#515#516#0" expanded="true" />
-                <element signature="e#564#565#0" expanded="true" />
+                <element signature="e#559#560#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,15 +70,11 @@
       <file leaf-file-name="BasicStringValue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BasicStringValue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+            <state relative-caret-position="90">
+              <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
               <folding>
-                <element signature="e#151#152#0" expanded="true" />
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#88#89#0" expanded="true" />
-                <element signature="e#116#117#0" expanded="true" />
                 <element signature="e#512#513#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
+                <element signature="e#559#560#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,16 +83,8 @@
       <file leaf-file-name="BasicDoubleValue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BasicDoubleValue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-              <folding>
-                <element signature="e#151#152#0" expanded="true" />
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#147#148#0" expanded="true" />
-                <element signature="e#200#201#0" expanded="true" />
-                <element signature="e#541#542#0" expanded="true" />
-                <element signature="e#585#586#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -152,8 +128,8 @@
         <option value="$PROJECT_DIR$/src/BasicIntParameters.java" />
         <option value="$PROJECT_DIR$/src/BasicStringParameter.java" />
         <option value="$PROJECT_DIR$/src/Value.java" />
-        <option value="$PROJECT_DIR$/src/BasicIntValue.java" />
         <option value="$PROJECT_DIR$/src/BasicStringValue.java" />
+        <option value="$PROJECT_DIR$/src/BasicIntValue.java" />
         <option value="$PROJECT_DIR$/src/BasicDoubleValue.java" />
         <option value="$PROJECT_DIR$/src/ComplexValue.java" />
         <option value="$PROJECT_DIR$/src/RecordAPT.java" />
@@ -171,8 +147,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,6 +163,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -300,31 +276,31 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994664" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4903949" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48932764" weight="0.32936078" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5298826" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5346852" side_tool="true" visible="true" weight="0.28277355" />
       <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46531484" visible="true" weight="0.28277355" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49893278" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4701174" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893278" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49786553" weight="0.32936078" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13553895" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49893278" weight="0.32936078" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13713981" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4759872" weight="0.3997833" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4791889" weight="0.3997833" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32977587" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49893278" weight="0.32936078" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -334,13 +310,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ComplexValue.java</url>
-          <line>30</line>
+          <url>file://$PROJECT_DIR$/src/RecordAPT.java</url>
+          <line>92</line>
           <properties />
-          <option name="timeStamp" value="25" />
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="30" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -415,84 +391,58 @@
     <entry file="file://$PROJECT_DIR$/src/BasicIntParameters.java" />
     <entry file="file://$PROJECT_DIR$/src/BasicParameters.java" />
     <entry file="file://$PROJECT_DIR$/src/BasicStringParameter.java" />
-    <entry file="file://$PROJECT_DIR$/src/Value.java">
+    <entry file="file://$PROJECT_DIR$/src/BasicDoubleValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BasicIntValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-          <folding>
-            <element signature="e#147#148#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BasicStringValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+        <state relative-caret-position="90">
+          <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
           <folding>
-            <element signature="e#151#152#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#88#89#0" expanded="true" />
-            <element signature="e#116#117#0" expanded="true" />
             <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BasicDoubleValue.java">
+    <entry file="file://$PROJECT_DIR$/src/Value.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        <state relative-caret-position="210">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BasicIntValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
           <folding>
-            <element signature="e#151#152#0" expanded="true" />
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#147#148#0" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ComplexValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#84#85#0" expanded="true" />
-            <element signature="e#112#113#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RecordAPT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="75" column="33" selection-start-line="73" selection-start-column="31" selection-end-line="75" selection-end-column="33" />
-          <folding>
-            <element signature="e#1437#1438#0" expanded="true" />
-            <element signature="e#1496#1497#0" expanded="true" />
-            <element signature="e#1545#1546#0" expanded="true" />
-            <element signature="e#1594#1595#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
-            <element signature="e#1681#1682#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="387">
+          <caret line="95" column="50" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
         </state>
       </provider>
     </entry>
