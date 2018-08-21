@@ -73,10 +73,8 @@ public class RecordAPT {
     public static void main(String[] args) {
         String txt ="TLON,GOFWD/      (CIRCLE/     -5.00000,     65.00000,     50.00000,$\n" +
                 "      15.00000),ON,(LINE/     -5.00000,     65.00000,     50.00000,$\n" +
-                "                              -5.00000,(A/ 1,2,3)     ,50.00000,     50.00000),1,2,3";
+                "                              -5.00000, ,50.00000,     50.00000)";
 
-//                String txt = "GOTO/ 1.234,4.2,5.6,7.4";
-//
         RecordAPT r = new RecordAPT();
         Value record = r.createRecord(txt);
         String s = drawRecord(((ComplexValue) record), "");

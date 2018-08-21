@@ -20,8 +20,8 @@
       <file leaf-file-name="RecordAPT.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RecordAPT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+            <state relative-caret-position="209">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="e#1851#1852#0" expanded="true" />
                 <element signature="e#1910#1911#0" expanded="true" />
@@ -283,11 +283,11 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5352188" side_tool="true" visible="true" weight="0.5817985" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5032017" side_tool="true" visible="true" weight="0.32936078" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46478122" visible="true" weight="0.5817985" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46478122" weight="0.5817985" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49893278" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49733192" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4967983" visible="true" weight="0.32936078" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13713981" />
@@ -314,7 +314,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/RecordAPT.java</url>
-          <line>88</line>
+          <line>86</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
@@ -444,8 +444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RecordAPT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+        <state relative-caret-position="209">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="e#1851#1852#0" expanded="true" />
             <element signature="e#1910#1911#0" expanded="true" />
