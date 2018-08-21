@@ -19,9 +19,10 @@ public class RecordAPT {
 
             if(next.equals("("))
                 mainValue.addParameter(processListOfParameters(iterator, new ComplexValue()));
-            else if(next.equals(")"))
+            else if(next.equals(")")) {
+                ((ComplexValue)mainValue).setParametersStack();
                 return mainValue;
-            else if(next.isEmpty())
+            }else if(next.isEmpty())
                 mainValue.addParameter(null);
             else
                 if(isWord(next)) {
@@ -34,6 +35,7 @@ public class RecordAPT {
                 else if(isInt(next))
                     mainValue.addParameter(new BasicIntValue(next));
         }
+        ((ComplexValue)mainValue).setParametersStack();
         return mainValue;
     }
 
@@ -52,10 +54,6 @@ public class RecordAPT {
     private List<String> splitRecordPart(String part){
         String a = part.replaceAll("(\\s+)|(\\$+)","");
         return Arrays.asList(a.split("(?<=\\(|\\))|(?=\\(|\\))"));
-    }
-
-    private boolean paramatersTypeHasChanged(Object params, Object instance){
-        return params!=null && !(params.getClass().isAssignableFrom(instance.getClass()));
     }
 
     private static boolean isDecimal(String word) {
@@ -81,12 +79,10 @@ public class RecordAPT {
 //
         RecordAPT r = new RecordAPT();
         Value record = r.createRecord(txt);
-        ((ComplexValue)record).setParametersStack();
         String s = drawRecord(((ComplexValue) record), "");
         System.out.println(record.getWord()+"::\n"+s);
     }
 
-//    static String tabs = "\t";
 
     static String drawRecord(ComplexValue record, String tabs){
         tabs += "\t";
