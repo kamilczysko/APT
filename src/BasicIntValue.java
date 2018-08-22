@@ -25,6 +25,6 @@ public class BasicIntValue extends Value {
 
     @Override
     public String toString() {
-        return getValue()+"";
+        return getValue()+"("+getWord()+")";
     }
 }

@@ -11,7 +11,11 @@ public class RecordAPT {
         return apt;
     }
 
+
+
     private Value convertRecordToComplexValue(ListIterator<String> iterator, Value mainValue){
+
+        String paramWord = null;
 
         while(iterator.hasNext()){
             String next = iterator.next();
@@ -24,22 +28,34 @@ public class RecordAPT {
             }else if(next.isEmpty())
                 mainValue.addParameter(null);
             else
-                assignAppropriateValues(next, mainValue);
+                paramWord = assignAppropriateValues(next, mainValue, paramWord);
         }
         ((ComplexValue)mainValue).setParametersStack();
         return mainValue;
     }
 
-    private void assignAppropriateValues(String next, Value mainValue){
+    private String assignAppropriateValues(String next, Value mainValue, String paramWord){
+
+
         if(isWord(next)) {
-            if (mainValue.hasWord())
-                mainValue.addParameter(new BasicStringValue(next));
-            else
+            if (mainValue.hasWord() && mainValue instanceof ComplexValue) {
+                BasicStringValue basicStringValue = new BasicStringValue(next);
+                basicStringValue.setWord(paramWord);
+                mainValue.addParameter(basicStringValue);
+            }else
                 mainValue.setWord(next);
-        } else if (isDecimal(next))
-            mainValue.addParameter(new BasicDoubleValue(next));
-        else if(isInt(next))
-            mainValue.addParameter(new BasicIntValue(next));
+
+            paramWord = next;
+        } else if (isDecimal(next)) {
+            BasicDoubleValue basicDoubleValue = new BasicDoubleValue(next);
+            basicDoubleValue.setWord(paramWord);
+            mainValue.addParameter(basicDoubleValue);
+        }else if(isInt(next)){
+            BasicIntValue basicIntValue = new BasicIntValue(next);
+            basicIntValue.setWord(paramWord);
+            mainValue.addParameter(basicIntValue);
+        }
+        return paramWord;
     }
 
     private List<String> splitRecordToTableOfStrings(String apt){
@@ -72,7 +88,7 @@ public class RecordAPT {
 
     /*****/
     public static void main(String[] args) {
-        String txt ="TLON,GOFWD/      (CIRCLE/     -5.00000,     65.00000,     50.00000,$\n" +
+        String txt ="TLON,GOFWD/  1,2,3,    (CIRCLE/     -5.00000,     65.00000,     50.00000,$\n" +
                 "      15.00000),ON,(LINE/     -5.00000,     65.00000,     50.00000,$\n" +
                 "                              -5.00000, ,51.00000,     50.00000)";
 
@@ -95,7 +111,7 @@ public class RecordAPT {
             }else if(myRecord == null) {
                 output.append(tabs+"none---\n");
             }else
-                if(myRecord.hasWord())
+                if(myRecord.hasWord() && !myRecord.hasBasicValue())
                     output.append(myRecord.getWord()+" : \n");
                 else if(!(myRecord instanceof ComplexValue))
                     output.append(tabs+"*"+myRecord.toString()+" \n");
