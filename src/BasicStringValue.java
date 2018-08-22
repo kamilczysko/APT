@@ -8,8 +8,9 @@ public class BasicStringValue extends Value {
 
     public BasicStringValue() {}
 
-    public void setValue(String value) {
+    public BasicStringValue setValue(String value) {
         this.value = value;
+        return this;
     }
 
     public String getValue() {

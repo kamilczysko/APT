@@ -11,8 +11,6 @@ public class RecordAPT {
         return apt;
     }
 
-
-
     private Value convertRecordToComplexValue(ListIterator<String> iterator, Value mainValue){
 
         String paramWord = null;
@@ -39,20 +37,17 @@ public class RecordAPT {
 
         if(isWord(next)) {
             if (mainValue.hasWord() && mainValue instanceof ComplexValue) {
-                BasicStringValue basicStringValue = new BasicStringValue(next);
-                basicStringValue.setWord(paramWord);
+                Value basicStringValue = new BasicStringValue(next).setWord(paramWord);
                 mainValue.addParameter(basicStringValue);
             }else
                 mainValue.setWord(next);
 
             paramWord = next;
         } else if (isDecimal(next)) {
-            BasicDoubleValue basicDoubleValue = new BasicDoubleValue(next);
-            basicDoubleValue.setWord(paramWord);
+            Value basicDoubleValue = new BasicDoubleValue(next).setWord(paramWord);
             mainValue.addParameter(basicDoubleValue);
         }else if(isInt(next)){
-            BasicIntValue basicIntValue = new BasicIntValue(next);
-            basicIntValue.setWord(paramWord);
+            Value basicIntValue = new BasicIntValue(next).setWord(paramWord);
             mainValue.addParameter(basicIntValue);
         }
         return paramWord;
@@ -84,7 +79,6 @@ public class RecordAPT {
     private boolean isWord(String word){
         return word.matches("[A-Z]*");
     }
-
 
     /*****/
     public static void main(String[] args) {

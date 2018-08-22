@@ -10,8 +10,9 @@ public class BasicIntValue extends Value {
 
     public BasicIntValue() {}
 
-    public void setValue(String value) {
+    public BasicIntValue setValue(String value) {
         this.value = Integer.parseInt(value);
+        return this;
     }
 
     public Integer getValue() {

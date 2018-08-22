@@ -8,11 +8,12 @@ public class BasicDoubleValue extends Value {
 
     public BasicDoubleValue() {}
 
-    void setValue(String value) {
+    public BasicDoubleValue setValue(String value) {
         this.value = Double.parseDouble(value);
+        return this;
     }
 
-    Double getValue() {
+    public Double getValue() {
         return value;
     }
 

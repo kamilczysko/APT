@@ -21,8 +21,9 @@ public abstract class Value {
         return complexParameters.get(i);
     }
 
-    public void setWord(String word){
+    public Value setWord(String word){
         this.word = word;
+        return this;
     }
 
     public String getWord() {
