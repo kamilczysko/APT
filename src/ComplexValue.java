@@ -8,10 +8,10 @@ public class ComplexValue extends Value {
 
     public void setParametersStack(){
         stackOfParameters = new Stack();
-        List<Value> listOfValues = new LinkedList<>(getParameters());
+        List<Value> list = new LinkedList<>(getParameters());
 
-        Collections.reverse(listOfValues);
-        stackOfParameters.addAll(listOfValues);
+        Collections.reverse(list);
+        stackOfParameters.addAll(list);
     }
 
     public Value getNextValue(){
