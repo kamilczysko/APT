@@ -4,18 +4,18 @@ import java.util.List;
 import java.util.Stack;
 
 public class ComplexValue extends Value {
-    private Stack<Value> parametersStack;
+    private Stack<Value> stackOfParameters;
 
     public void setParametersStack(){
-        parametersStack = new Stack();
+        stackOfParameters = new Stack();
         List<Value> listOfValues = new LinkedList<>(getParameters());
 
         Collections.reverse(listOfValues);
-        parametersStack.addAll(listOfValues);
+        stackOfParameters.addAll(listOfValues);
     }
 
     public Value getNextValue(){
-        return (parametersStack.size() > 0) ? parametersStack.pop() : null;
+        return (stackOfParameters.size() > 0) ? stackOfParameters.pop() : null;
     }
 
     @Override

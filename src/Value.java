@@ -36,7 +36,5 @@ public abstract class Value {
         return (this instanceof ComplexValue);
     }
 
-    ;
-
     abstract boolean hasBasicValue();
 }
