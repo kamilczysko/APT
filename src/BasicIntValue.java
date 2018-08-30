@@ -1,8 +1,7 @@
 import java.util.Optional;
 
 public class BasicIntValue extends Value {
-
-    private Integer value = null;
+    private Integer actualValue = null;
 
     public BasicIntValue(String value) {
         setValue(value);
@@ -11,21 +10,21 @@ public class BasicIntValue extends Value {
     public BasicIntValue() {}
 
     public BasicIntValue setValue(String value) {
-        this.value = Integer.parseInt(value);
+        actualValue = Integer.parseInt(value);
         return this;
     }
 
     public Integer getValue() {
-        return value;
+        return actualValue;
     }
 
     @Override
     public boolean hasBasicValue() {
-        return Optional.ofNullable(value).isPresent();
+        return Optional.ofNullable(actualValue).isPresent();
     }
 
     @Override
     public String toString() {
-        return getValue()+"("+getWord()+")";
+        return getValue() + "(" + getMainWord() + ")";
     }
 }
