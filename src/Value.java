@@ -3,34 +3,38 @@ import java.util.List;
 import java.util.Optional;
 
 public abstract class Value {
-
     private List<Value> complexParameters = new LinkedList<>();
-    private String word = null;
+    private String mainWord = null;
 
-    public void addParameter(Value parameter){
-        this.complexParameters.add(parameter);
+    public Value setMainWord(String word) {
+        mainWord = word;
+
+        return this;
     }
 
-    public List<Value> getComplexParameters(){
+    public void addParameter(Value parameter) {
+        complexParameters.add(parameter);
+    }
+
+    public List<Value> getParameters() {
         return complexParameters;
     }
 
-    public Value getComplexValue(int i){
-        return complexParameters.get(i);
+    public int sizeOfArrayOfParametersList() {
+        return complexParameters.size();
     }
 
-    public void setWord(String word){
-        this.word = word;
+    public String getMainWord() {
+        return mainWord;
     }
 
-    public String getWord() {
-        return word;
+    public boolean hasWord() {
+        return Optional.ofNullable(mainWord).isPresent();
     }
 
-    public boolean hasWord(){
-        return Optional.ofNullable(word).isPresent();
+    public boolean isComplexValue() {
+        return (this instanceof ComplexValue);
     }
 
     abstract boolean hasBasicValue();
-
 }
