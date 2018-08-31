@@ -1,30 +1,27 @@
 import java.util.Optional;
 
 public class BasicStringValue extends Value {
+    private String actualValue = null;
 
-    private String value = null;
-
-    public BasicStringValue(String value) {setValue(value);}
+    public BasicStringValue(String mValue) { setActualValue(mValue); }
 
     public BasicStringValue() {}
 
-    public BasicStringValue setValue(String value) {
-        this.value = value;
+    public BasicStringValue setActualValue(String value) {
+        actualValue = value;
         return this;
     }
 
-    public String getValue() {
-        return value;
-    }
+    public String getActualValue() { return actualValue; }
 
     @Override
     boolean hasBasicValue() {
-        return Optional.ofNullable(value).isPresent();
+        return Optional.ofNullable(actualValue).isPresent();
     }
 
     @Override
     public String toString() {
-        return getValue()+"("+getWord()+")";
+        return getActualValue() + "(" + getMainWord() + ")";
     }
 
 }
